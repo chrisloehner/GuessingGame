@@ -25,8 +25,8 @@ def play():
 
         if number == guess:
             print(f"Yes, {number} is the winner. Score: {score}")
-            user_wins = True
             save_score(score)
+            user_wins = True
 
         elif guess > number:
             print("Die gesuchte Zahl ist kleiner.")
