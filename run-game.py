@@ -4,6 +4,9 @@
 
 import random
 
+def save_score(highscore):
+    with open('highscore.txt', 'a') as file:
+        file.write(f"{highscore}\n")
 def play():
     number = random.randint(1, 100)
     user_wins = False
@@ -23,19 +26,19 @@ def play():
         if number == guess:
             print(f"Yes, {number} is the winner. Score: {score}")
             user_wins = True
+            save_score(score)
+
         elif guess > number:
             print("Die gesuchte Zahl ist kleiner.")
         else:
             print("Die gesuchte Zahl ist größer.")
     # bis hier ist die function play
 
-def save_score(score):
-    with open('highscore.txt', 'w') as file:
-        file.write(f"{score}.\n")
+
 
 while True:  # Dauerschleife
     play()
-    save_score(score)
+
 
     correctUserInput = False
     while not correctUserInput:
