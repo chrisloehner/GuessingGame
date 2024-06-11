@@ -30,12 +30,12 @@ def play():
     # bis hier ist die function play
 
 def save_score(score):
-    # speichert den HIGHSCORE in einer DATEI ab.
-    #TODO: implementieren Sie diese Funktion.
-    pass
+    with open('highscore.txt', 'w') as file:
+        file.write(f"{score}.\n")
 
 while True:  # Dauerschleife
     play()
+    save_score(score)
 
     correctUserInput = False
     while not correctUserInput:
