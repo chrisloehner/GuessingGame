@@ -25,7 +25,7 @@ def play():
 
         if number == guess:
             print(f"Yes, {number} is the winner. Score: {score}")
-            save_score(score)
+            #save_score(score)
             user_wins = True
 
         elif guess > number:
@@ -33,11 +33,14 @@ def play():
         else:
             print("Die gesuchte Zahl ist größer.")
     # bis hier ist die function play
+    return score
 
 
 
 while True:  # Dauerschleife
-    play()
+    highscore = play()
+    save_score(highscore)
+
 
 
     correctUserInput = False
