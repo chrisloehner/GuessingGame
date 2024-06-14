@@ -1,1 +1,1 @@
-GuessingGame mit Abspeicher des Highscores
+GuessingGame mit Abspeichern des Highscores
